@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Documentation } from "./Pages/Documentation";
+import { Route, Routes } from "react-router-dom";
+import { Header } from "./CLComponents/Header/Header";
+import { SideBar } from "./CLComponents/Sidebar/Sidebar";
+import { TypographyDoc } from "./documentation/TypographyDoc";
+import { ListDoc } from "./documentation/ListDoc";
+import { IconDoc } from "./documentation/IconDoc";
+import { CardDoc } from "./documentation/CardDoc";
+import { BadgeDoc } from "./documentation/BadgeDoc";
+import { AvatarDoc } from "./documentation/AvatarDoc";
+import { ButtonDoc } from "./documentation/ButtonDoc";
+import { AlertDoc } from "./documentation/AlertDoc";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="flex-row w-full h-88">
+        <SideBar />
+        <div className="main-container">
+          <Routes>
+            <Route path="/typography" element={<TypographyDoc />} />
+            <Route path="/list" element={<ListDoc />} />
+            <Route path="/icon" element={<IconDoc />} />
+            <Route path="/card" element={<CardDoc />} />
+            <Route path="/badge" element={<BadgeDoc />} />
+            <Route path="/avatar" element={<AvatarDoc />} />
+            <Route path="/button" element={<ButtonDoc />} />
+            <Route path="/button" element={<ButtonDoc />} />
+            <Route path="/alert" element={<AlertDoc />} />
+          </Routes>
+        </div>
+      </div>
+    </>
   );
 }
 
