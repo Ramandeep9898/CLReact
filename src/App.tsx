@@ -1,5 +1,4 @@
 import "./App.css";
-import { Documentation } from "./Pages/Documentation";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./CLComponents/Header/Header";
 import { SideBar } from "./CLComponents/Sidebar/Sidebar";
@@ -11,6 +10,9 @@ import { BadgeDoc } from "./documentation/BadgeDoc";
 import { AvatarDoc } from "./documentation/AvatarDoc";
 import { ButtonDoc } from "./documentation/ButtonDoc";
 import { AlertDoc } from "./documentation/AlertDoc";
+import { ImageDoc } from "./documentation/ImageDoc";
+import { InputDoc } from "./documentation/InputDoc";
+import { ModalDoc } from "./documentation/ModalDoc";
 
 function App() {
   return (
@@ -29,6 +31,10 @@ function App() {
             <Route path="/button" element={<ButtonDoc />} />
             <Route path="/button" element={<ButtonDoc />} />
             <Route path="/alert" element={<AlertDoc />} />
+            <Route path="/image" element={<ImageDoc />} />
+            <Route path="/input" element={<InputDoc />} />
+            <Route path="/textUtils" element={<TypographyDoc />} />
+            <Route path="/modal" element={<ModalDoc />} />
           </Routes>
         </div>
       </div>

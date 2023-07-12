@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Typography } from "../../component/Typography/Typography";
 import "./sidebar.css";
-export const SideBar = ({ ...props }): JSX.Element => (
+export const SideBar = (): JSX.Element => (
   <>
     <div className="sidebar-container">
       <NavLink
@@ -100,24 +100,6 @@ export const SideBar = ({ ...props }): JSX.Element => (
         }
       >
         <Typography variant="sidebar">Modal</Typography>
-      </NavLink>
-
-      <NavLink
-        to="/rating"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "active" : "navPending"
-        }
-      >
-        <Typography variant="sidebar">Rating</Typography>
-      </NavLink>
-
-      <NavLink
-        to="/snackbar"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "active" : "navPending"
-        }
-      >
-        <Typography variant="sidebar">Snackbar</Typography>
       </NavLink>
 
       <NavLink
