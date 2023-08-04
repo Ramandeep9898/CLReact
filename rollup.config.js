@@ -2,13 +2,14 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import postcss from "rollup-plugin-postcss";
-import image from "@rollup/plugin-image";
-import packageJson from "./package.json" assert { type: "json" };
+import { terser } from "rollup-plugin-terser";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
-export default [
+const packageJson = require("./package.json");
+
+export const rollupArray = [
   {
-    input: "src/index.tsx",
+    input: "src/component/index.ts",
     output: [
       {
         file: packageJson.main,
@@ -22,19 +23,19 @@ export default [
       },
     ],
     plugins: [
-      postcss({
-        plugins: [],
-        minimize: true,
-      }),
+      peerDepsExternal(),
       resolve(),
-      image(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      terser(),
     ],
+    external: ["react", "react-dom", "styled-components"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
+    input: "src/component/index.ts",
+    output: [{ file: "dist/types.d.ts", format: "es" }],
+    plugins: [dts.default()],
   },
 ];
+
+export default rollupArray;

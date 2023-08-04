@@ -34,7 +34,7 @@ export const AvatarDoc = () => {
         <Typography variant="h4" component="h1">
           Default Sizes.
         </Typography>
-        <Typography variant="sub-title" component="h1" className="mb-4">
+        <Typography variant="sub-title" component="h1">
           Available in three sizes. Can be created by{" "}
           <code className="code">md</code>
           <code className="code">lg</code>

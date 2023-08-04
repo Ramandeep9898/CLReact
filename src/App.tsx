@@ -13,6 +13,7 @@ import { AlertDoc } from "./documentation/AlertDoc";
 import { ImageDoc } from "./documentation/ImageDoc";
 import { InputDoc } from "./documentation/InputDoc";
 import { ModalDoc } from "./documentation/ModalDoc";
+import { Usage } from "./documentation/Usage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <SideBar />
         <div className="main-container">
           <Routes>
+            <Route path="/" element={<Usage />} />
             <Route path="/typography" element={<TypographyDoc />} />
             <Route path="/list" element={<ListDoc />} />
             <Route path="/icon" element={<IconDoc />} />

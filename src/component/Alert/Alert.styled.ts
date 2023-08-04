@@ -32,6 +32,7 @@ const severity = css<AlertProps>`
       : "";
   }}
 `;
+
 const variant = css<AlertProps>`
   ${(props: AlertProps) => {
     return props.variant === "outline" && props.severity === "error"
